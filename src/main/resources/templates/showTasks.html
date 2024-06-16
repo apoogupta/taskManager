@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tasks for User</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+<h1>Tasks for: <span th:text="${user.username}">User</span></h1>
+
+<ul class="task-list">
+    <!-- Iterate over the tasks and display each task's title -->
+    <li th:each="task : ${tasks}" class="task-item">
+        <span th:if="${task.completed}" style="color:green" class="task-title"><span th:text="${task.title}"></span></span>
+        <span th:if="${!task.completed}" style="color:red" class="task-title"><span th:text="${task.title}"></span></span>
+        <div class="task-actions">
+            <form th:action="@{/tasks/{id}/done(id=${task.id})}" method="post">
+                <button type="submit" class="mark-done" th:if="${!task.completed}">Mark as Done</button>
+            </form>
+            <form th:action="@{/tasks/{id}/delete(id=${task.id})}" method="post">
+                <button type="submit" class="delete">Delete</button>
+            </form>
+        </div>
+    </li>
+</ul>
+
+<form class="add-task-form" th:action="@{/addTask}" method="get">
+    <input type="submit" value="Add Task" />
+</form>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+<div class="options-container">
+    <h1>Hey, <span th:text="${user.username}">User</span></h1>
+    <form th:action="@{/showTasks}" method="get">
+        <input type="submit" value="Show Tasks" />
+    </form>
+    <form th:action="@{/addTask}" method="get">
+        <input type="submit" value="Add Task" />
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+<div class="options-container">
+    <h1>Choose From Below Options</h1>
+    <form th:action="@{/loginUser}" method="get">
+        <input type="submit" value="Login" />
+    </form>
+    <form th:action="@{/signup}" method="get">
+        <input type="submit" value="Sign Up" class="secondary" />
+    </form>
+</div>
+</body>
+</html>

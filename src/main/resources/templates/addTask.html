@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+<h1>Add Your Task</h1>
+<form th:action="@{/saveTask}" method="post">
+    <input type="title" id="title" name="title" required>
+    <br>
+    <p>
+        <input type="submit" value="Submit" />
+        <input type="reset" value="Reset" />
+    </p>
+</form>
+</body>
+</html>
